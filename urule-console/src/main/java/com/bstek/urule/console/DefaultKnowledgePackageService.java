@@ -64,6 +64,7 @@ public class DefaultKnowledgePackageService implements KnowledgePackageService{
 			KnowledgePackage knowledgePackage=knowledgeBase.getKnowledgePackage();
 			return knowledgePackage;
 		}catch(Exception ex){
+			ex.printStackTrace();
 			throw new RuleException(ex);
 		}
 	}

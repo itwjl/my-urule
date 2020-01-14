@@ -6,29 +6,7 @@
   <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-	<licenses>
-		<license>
-			<name>The Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<name>Gaojie</name>
-			<email>jacky.gao@bstek.com</email>
-			<organization>Bstek</organization>
-			<organizationUrl>http://www.bstek.com</organizationUrl>
-		</developer>
-	</developers>
-	<scm>
-		<connection>https://github.com/youseries/urule.git</connection>
-		<developerConnection>https://github.com/youseries/urule.git</developerConnection>
-		<url>https://github.com/youseries/urule</url>
-	</scm>
-	<organization>
-		<name>Bstek</name>
-		<url>http://www.bstek.com</url>
-	</organization>  
+
   <packaging>pom</packaging>
 	<build>
 		<resources>
@@ -133,37 +111,6 @@
 		        </execution>
 		      </executions>
 		    </plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.5</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>		    			
 		</plugins>
 	</build>
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-		</repository>
-	</distributionManagement>
-
-	<name>Urule Parent Project</name>
-	<url>https://github.com/youseries/urule/tree/master/urule-parent</url>
-	<issueManagement>
-		<url>https://github.com/youseries/urule/issues</url>
-	</issueManagement>
-	<description>Urule Parent Project</description>  
 </project>

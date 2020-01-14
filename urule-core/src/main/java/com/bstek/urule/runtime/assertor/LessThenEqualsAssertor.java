@@ -36,6 +36,7 @@ public class LessThenEqualsAssertor implements Assertor {
 		if(datatype.equals(Datatype.Date)){
 			Date leftDate=(Date)datatype.convert(left);
 			Date rightDate=(Date)datatype.convert(right);
+			System.out.println("leftData" + left + " rightData " + right);
 			Calendar leftCalendar=Calendar.getInstance();
 			leftCalendar.setTime(leftDate);
 			Calendar rightCalendar=Calendar.getInstance();

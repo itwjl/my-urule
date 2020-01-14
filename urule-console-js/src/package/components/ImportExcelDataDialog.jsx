@@ -31,15 +31,18 @@ export default class ImportExcelDataDialog extends Component{
             <div>
                 <form id={formId} method="post" encType="multipart/form-data" target={iframeName} action={window._server+'/packageeditor/importExcelTemplate'}>
                     <input name="file" type="file" style={{width:'100%'}}/>
-                    <input type="hidden" name="targetFiles" value={this.state.files}/>
+                        <input type="hidden" name="targetFiles" value={this.state.files}/>
                 </form>
                 <iframe name={iframeName} height="0px" width="0px" frameBorder="0" onLoad={(e)=>{
                     try{
-                        let jsonData=$.parseJSON($(e.target).contents().text());
+                        let text = $(e.target).contents().text();
+                        let jsonData=$.parseJSON(text);
                         $(ReactDOM.findDOMNode(this)).modal('hide');
                         event.eventEmitter.emit(event.OPEN_BATCH_TEST_DIALOG,{files:this.state.files,data:jsonData});
                     }catch(error){
-                        bootbox.alert('导入Excel失败');
+                        if($(e.target).contents().text()) {
+                            bootbox.alert('导入Excel失败');
+                        }
                     }
                 }}></iframe>
             </div>
